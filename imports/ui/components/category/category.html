@@ -1,0 +1,61 @@
+<template name="category">
+    <div class="container mt-4 mb-4">
+        <div class="row">
+            <div class="col-xs-12 col-lg-4 ">
+                <div class="card mb-4">
+    
+    
+                    <div class="container">
+                        <div class="row">
+    
+                            <!-- column1, Vertical Dropdown Menu -->
+                            <div class="list-group" id="main-menu">
+                                <span class="list-group-item active background-blue" style="border: none;" href="#sub-menu" data-toggle="collapse" data-parent="#main-menu"><h5 style="margin:0;">Grupos de Indicadores</h5></span>
+
+                            <a name="indicador" class="list-group-item dropup collapsed" aria-expanded="false" href="#sub-menu13" data-toggle="collapse" data-parent="#main-menu"><span class="down-caret"></span>
+                                      Demografia
+                                        </a><div class="list-group-level2 collapse" id="sub-menu13"><a class="list-group-item" onclick="requestData(148)" href="javascript:" data-parent="#sub-sub-menu">
+                                          bnm</a>
+                                          </div>
+                            <a name="indicador" class="list-group-item dropup collapsed" aria-expanded="false" href="#sub-menu7" data-toggle="collapse" data-parent="#main-menu"><span class="down-caret"></span>
+                                      Geografia da Habitação
+                                      </a><div class="list-group-level2 collapse" id="sub-menu7"><a class="list-group-item" onclick="requestData(127)" href="javascript:" data-parent="#sub-sub-menu">
+                                          Índice da relação de propriedade com a habitação</a></div>
+                            <div style="height: 1px"></div>
+
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-xs-12 col-lg-8">
+                <div class="card">
+                    <div id="divAno">
+                    </div>
+                    <div id="map1" style="width: 100%; height: 75vh"></div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    
+    
+    <div id="instrucoes" class="container pb-4">
+        <div class="card">
+    
+            <span class="list-group-item active background-blue">
+                <h5 class="m-0">Instruções</h5>
+            </span>
+    
+            <div class="m-3">
+                <div class="col-xs-12" style="text-align: center; vertical-align: middle; color: #959595;">
+                    <img src="tests/img/helper.png" height="200px"><br>
+                    Descrição
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</template>
