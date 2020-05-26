@@ -4,6 +4,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 // Import needed templates
 import '../../ui/layouts/body/body.js';
 import '../../ui/pages/home/home.js';
+import '../../ui/pages/login/login.js';
 import '../../ui/pages/category/category.js';
 import '../../ui/pages/not-found/not-found.js';
 
@@ -41,3 +42,34 @@ FlowRouter.notFound = {
     BlazeLayout.render('App_body', { main: 'App_notFound' });
   },
 };
+
+// Login to Admin Interface
+FlowRouter.route('/login', {
+  name: 'login',
+  action: function(){
+      BlazeLayout.render('login');
+  }
+});
+
+FlowRouter.route('/register', {
+  name: 'register',
+  action: function(){
+      BlazeLayout.render('register');
+  }
+});
+
+loggedIn = FlowRouter.group({
+  prefix: '/admin',
+  triggersEnter: [
+    function(){
+      var route;
+      if (!(Meteor.loggingIn() || Meteor.userId())){
+        route = FlowRouter.current();
+        if (route.route.name !== 'login'){
+          sessionStorage.set('redirectAfterLogin', route.path)
+        }
+        return FlowRouter.go('login');
+      }
+    }
+  ]
+});
