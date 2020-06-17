@@ -27,8 +27,10 @@ meteortesting:mocha               # A package for writing and running your meteo
 johanbrook:publication-collector  # Test a Meteor publication by collecting its output
 
 aldeed:autoform@6.3.0
+accounts-ui
 accounts-password
 alanning:roles
 
 msavin:jetsetter
 msavin:mongol
+aldeed:collection2@3.0.0
