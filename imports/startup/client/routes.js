@@ -1,12 +1,14 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { Session } from 'meteor/session';
 
 // Import needed templates
 import '../../ui/layouts/body/body.js';
 import '../../ui/pages/home/home.js';
 import '../../ui/pages/login/login.js';
-import '../../ui/pages/category/category.js';
+import '../../ui/pages/admin/admin.js';
 import '../../ui/pages/not-found/not-found.js';
+import '../../ui/pages/category/category.js';
 
 // Set up all routes in the app
 FlowRouter.route('/', {
@@ -58,6 +60,15 @@ FlowRouter.route('/register', {
   }
 });
 
+FlowRouter.route('/logout', {
+  name: 'logout',
+  action: function(){
+      Meteor.logout(function(){
+          FlowRouter.go('/');
+      });
+  }
+});
+
 loggedIn = FlowRouter.group({
   prefix: '/admin',
   triggersEnter: [
@@ -66,10 +77,62 @@ loggedIn = FlowRouter.group({
       if (!(Meteor.loggingIn() || Meteor.userId())){
         route = FlowRouter.current();
         if (route.route.name !== 'login'){
-          sessionStorage.set('redirectAfterLogin', route.path)
+          Session.set('redirectAfterLogin', route.path)
         }
         return FlowRouter.go('login');
       }
     }
   ]
 });
+
+loggedIn.route('/', {
+  name: 'dashboard',
+  action: function(){
+    BlazeLayout.render('admin', { dashboard:'dashboard'});
+  }
+});
+
+loggedIn.route('/addtechnical', {
+  name: 'addtechnical',
+  action: function(){
+    BlazeLayout.render('admin', { dashboard: 'addtechnical'});
+  }
+});
+
+loggedIn.route('/managetechnical', {
+  name: 'managetechnical',
+  action: function(){
+    BlazeLayout.render('admin', { dashboard: 'managetechnical'});
+  }
+})
+
+loggedIn.route('/addtools', {
+  name: 'addtools',
+  action: function(){
+    BlazeLayout.render('admin', { dashboard: 'addtools'});
+  }
+});
+
+loggedIn.route('/managetools', {
+  name: 'managetools',
+  action: function(){
+    BlazeLayout.render('admin', { dashboard: 'managetools'});
+  }
+});
+
+loggedIn.route('/formupdate/:docId', {
+  name: 'formupdate',
+  action: function(params, queryParams){
+    BlazeLayout.render('admin', { dashboard: 'formupdate'});
+  }
+})
+
+// Last route Path routine
+var lastRoutePath;
+FlowRouter.triggers.enter([
+  function(context){
+    newRoutePath = context.path;
+    FlowRouter.lastRoutePath = lastRoutePath;
+    lastRoutePath  = newRoutePath;
+  }
+]);

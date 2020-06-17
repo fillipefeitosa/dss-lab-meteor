@@ -1,0 +1,12 @@
+<template name="formupdate">
+  <div class="col-md-3">
+    <h2><a href="#" id="clickBack"><i class="fas fa-arrow-circle-left"></i></a>  Editar Registo</h2>
+  </div>
+  <div class="col-md-7">
+    {{#with getDocument}}
+      {{> quickForm collection=formCollection id="quickEditForm" doc=this type="update"}}
+    {{/with}}
+  </div>
+  <div class="col-md-2"></div>
+</template>
+

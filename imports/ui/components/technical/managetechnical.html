@@ -1,0 +1,67 @@
+<template name="managetechnical">
+
+  {{#if isInRole 'Colaborador' }}
+
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+            <th class="text-center">Nome</th>
+            <th class="text-center">Autor Principal</th>
+            <th class="text-center">Link</th>
+            <th class="text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        {{#each techCollection}}
+        <tr>
+          <td>{{ name }}</td>
+          <td>{{ authors.[0].prefix }} {{ authors.[0].name }}</td>
+          <td>{{ link }}</td>
+          <td class="text-center">
+            <a href="/admin/formupdate/{{_id}}?collection=techCollection">
+              <i class="fa fa-edit"></i>Editar
+            </a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-1"></div>
+
+  <br><hr><br><br>
+
+  
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+            <th class="text-center">Nome</th>
+            <th class="text-center">Tipo</th>
+            <th class="text-center">Link</th>
+            <th class="text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        {{#each techMapCollection }}
+        <tr>
+          <td>{{ properties.name }}</td>
+          <td>{{ properties.group }}</td>
+          <td>{{ properties.link }}</td>
+          <td class="text-center">
+            <a href="/admin/formupdate/{{_id}}?collection=techMapCollection">
+              <i class="fa fa-edit"></i>Editar
+            </a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-1"></div>
+  {{/if}}
+
+</template>

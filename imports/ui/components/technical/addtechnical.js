@@ -1,18 +1,19 @@
+import { Meteor } from 'meteor/meteor';
 import { Technical } from '/imports/api/technical/technical.js';
 import { TechnicalMap } from '/imports/api/technicalMap/technicalMap';
 
-import './techbox.html';
+import './addtechnical.html';
 
-Template.techbox.onCreated(function(){
+Template.addtechnical.onCreated(function(){
   Meteor.subscribe('Technical.all');
   Meteor.subscribe('TechnicalMap.all');
 });
 
-Template.techbox.helpers({
+Template.addtechnical.helpers({
   techCollection() {
-    return Technical.find({});
+    return Technical;
   },
-  techMapCollection() {
-    return TechnicalMap.find({});
+  techMapCollection(){
+    return TechnicalMap;
   }
 })

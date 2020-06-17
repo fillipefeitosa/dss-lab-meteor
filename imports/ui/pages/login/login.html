@@ -1,0 +1,36 @@
+<template name="login">
+    <div class="bg-image" style="background-image: url(&quot;img/abstract-aerial-view-architectural-design-2157404.jpg&quot;);position: relative;"></div>
+    <div class="login-clean">
+        <form class='login'>
+            <h4 class="text-center">DSS LAB</h4>
+            <div class="col-xs-12 text-center">
+                <span class="fas fa-user-lock fa-5x col-xs-12 text-center" style="color:rgb(79,117,152)"></span>
+            </div>
+            <br>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit"
+                    style="background-color: rgb(79,117,152);">Entrar</button></div><a class="forgot" href="/register">Criar Conta</a>
+            </form>
+        </div>
+</template>
+
+<template name="register">
+    <div class="bg-image" style="background-image: url(&quot;img/abstract-aerial-view-architectural-design-2157404.jpg&quot;);position: relative;"></div>
+    <div class="login-clean">
+        <form class='login'>
+            <h4 class="text-center">DSS LAB</h4>
+            <div class="col-xs-12 text-center">
+                <span class="fas fa-user-lock fa-5x col-xs-12 text-center" style="color:rgb(79,117,152)"></span>
+            </div>
+            <br>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" id="password" placeholder="Password" required></div>
+            <div class="form-group"><input class="form-control" type="password" name="passwordRepeat" placeholder="Repeat Password" required>
+            </div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit"
+                    style="background-color: rgb(79,117,152);">Criar Conta</button></div><a class="forgot" href="/login">Fazer Login</a>
+            </form>
+        </div>
+</template>

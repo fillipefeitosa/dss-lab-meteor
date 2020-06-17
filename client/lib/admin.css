@@ -1,0 +1,153 @@
+body {
+    background-color: #f1f4f9;
+}
+
+.navbar-header {
+    text-align: center;
+    width: 100%;
+    color: #FFFFFF;
+    padding: 10px 10px 0 10px;
+    min-height: 70px;
+}
+
+.menu-title {
+    color: #9496a1;
+    clear: both;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 50px;
+    padding: 15px 0 0;
+    text-transform: uppercase;
+    width: 100%;
+    border-bottom: 1px solid #505050;
+}
+
+.nav-left {
+    background: #2b2b2b;
+    display: block;
+    height: 100vh;
+    min-height: 100%;
+    width: 250px;
+    min-width: 250px;
+    padding: 0 25px;
+    vertical-align: top;
+
+    position: fixed;
+    overflow: auto;
+}
+
+.nav-right {
+    display: block;
+    padding-left: 0 !important;
+    /*width: 100%;*/
+
+    margin: 0 0 0 250px;
+}
+
+
+.header {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 5px rgba(0,0,0,.15);
+    clear: both;
+    display: inline-block;
+    padding: 20px;
+    width: 100%;
+}
+
+.header span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+label img {
+    margin-left: 10px;
+}
+
+.submit {
+    float: right;
+}
+
+
+/*DROPDOWN*/
+
+/* Dropdown Button */
+.dropbtn {
+    color: #c8c9ce !important;
+    border: none;
+    cursor: pointer;
+    background: none !important;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 30px;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover {
+    color: #FFFFFF !important;
+    text-decoration: none;
+
+    transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    border: none;
+    cursor: pointer;
+    background: none !important;
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+
+    display: none;
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #c8c9ce !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: #FFFFFF !important;
+
+    transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display:block;
+}
+
+
+.right-align {
+    position: absolute;
+    top: 20px;
+    right: 0;
+
+    transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+.right-align.down {
+    transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+}
