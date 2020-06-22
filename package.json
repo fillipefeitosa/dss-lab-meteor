@@ -8,9 +8,11 @@
   "dependencies": {
     "@babel/runtime": "^7.7.6",
     "bcrypt": "^4.0.1",
-    "jquery": "^3.4.1",
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
     "jquery-validation": "^1.19.2",
     "meteor-node-stubs": "^1.0.0",
+    "popper.js": "^1.16.1",
     "simpl-schema": "^1.7.3"
   },
   "devDependencies": {

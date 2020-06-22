@@ -41,12 +41,14 @@ const geometrySchema = new SimpleSchema({
   },
   coordinates: {
     type: Array,
+    optional: false,
+    maxCount:1 
   },
   "coordinates.$": {
     type: coordinatesSchema,
     label: false,
   }
-})
+}, {tracker: Tracker});
 
 const propertiesSchema = new SimpleSchema({
   name: {
@@ -84,7 +86,7 @@ ToolsSchema = new SimpleSchema({
     autoform: { type: "hidden", label: false }
   },
   geometry: { type: geometrySchema },
-  properties: { type: propertiesSchema }
-});
+  properties: { type: propertiesSchema, label:"Propriedades" }
+}, {tracker: Tracker});
 
 Tools.attachSchema(ToolsSchema);

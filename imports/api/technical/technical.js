@@ -72,7 +72,7 @@ TechnicalSchema = new SimpleSchema({
         max:200
     }
 
-});
+}, {tracker: Tracker});
 
 Technical.attachSchema(TechnicalSchema);
 

@@ -17,3 +17,12 @@ Template.managetechnical.helpers({
     return TechnicalMap.find({});
   }
 })
+
+Template.managetechnical.events({
+  'click #deleteTech'(){
+    Technical.remove(this._id);
+  },
+  'click #deleteTechMap'(){
+    TechnicalMap.remove(this._id);
+  }
+});

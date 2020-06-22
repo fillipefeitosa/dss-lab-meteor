@@ -59,7 +59,7 @@
     <div class="nav-right">
 
         <div class="header mb-4">
-            <span>Dashboard</span>
+            <span>Dashboard {{> breadcrumb}} </span>
         </div>
         <div class="container-fluid">
             <div class="row">
@@ -69,4 +69,8 @@
     
     </div>
     
+</template>
+
+<template name="breadcrumb">
+    <span> {{getBreadcrumb}} </span>
 </template>

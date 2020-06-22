@@ -81,6 +81,8 @@ const propertiesSchema = new SimpleSchema({
 })
 
 TechnicalMapSchema = new SimpleSchema({
+  properties: { type: propertiesSchema },
+  geometry: { type: geometrySchema, optional:false },
   type: {
     type: String,
     defaultValue: 'Feature',
@@ -109,8 +111,6 @@ TechnicalMapSchema = new SimpleSchema({
     label: "Prefixo (ie. PhD, Prof)",
     optional: true,
   },
-  geometry: { type: geometrySchema },
-  properties: { type: propertiesSchema }
-});
+}, {tracker: Tracker});
 
 TechnicalMap.attachSchema(TechnicalMapSchema);

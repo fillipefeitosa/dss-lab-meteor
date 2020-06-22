@@ -94,6 +94,7 @@ loggedIn.route('/', {
 
 loggedIn.route('/addtechnical', {
   name: 'addtechnical',
+  breadcrumb:"Adicionar Trabalhos Técnicos",
   action: function(){
     BlazeLayout.render('admin', { dashboard: 'addtechnical'});
   }
@@ -101,6 +102,7 @@ loggedIn.route('/addtechnical', {
 
 loggedIn.route('/managetechnical', {
   name: 'managetechnical',
+  breadcrumb:"Gerir Trabalhos Técnicos",
   action: function(){
     BlazeLayout.render('admin', { dashboard: 'managetechnical'});
   }
@@ -108,6 +110,7 @@ loggedIn.route('/managetechnical', {
 
 loggedIn.route('/addtools', {
   name: 'addtools',
+  breadcrumb:"Adicionar Ferramentas",
   action: function(){
     BlazeLayout.render('admin', { dashboard: 'addtools'});
   }
@@ -115,6 +118,7 @@ loggedIn.route('/addtools', {
 
 loggedIn.route('/managetools', {
   name: 'managetools',
+  breadcrumb:"Gerir Ferramentas",
   action: function(){
     BlazeLayout.render('admin', { dashboard: 'managetools'});
   }
@@ -122,6 +126,7 @@ loggedIn.route('/managetools', {
 
 loggedIn.route('/formupdate/:docId', {
   name: 'formupdate',
+  breadcrumb:"Atualizar Registo",
   action: function(params, queryParams){
     BlazeLayout.render('admin', { dashboard: 'formupdate'});
   }

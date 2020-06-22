@@ -22,3 +22,9 @@ Template.managetools.helpers({
     return Tools.find({});
   }
 })
+
+Template.managetools.events({
+  'click #deleteTools'(){
+    Tools.remove(this._id);
+  },
+});
