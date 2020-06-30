@@ -1,19 +1,19 @@
-window.onscroll = function() {
-    "use strict";
+// window.onscroll = function() {
+//     "use strict";
 
-    var myNav = document.getElementById("nav-helper");
+//     var myNav = document.getElementById("nav-helper");
 
-    if (document.body.scrollTop >= 82 || document.documentElement.scrollTop >= 82) {
+//     if (document.body.scrollTop >= 82 || document.documentElement.scrollTop >= 82) {
 
-        myNav.style.opacity = "1";
-        myNav.style.filter  = 'alpha(opacity=100)';
+//         myNav.style.opacity = "1";
+//         myNav.style.filter  = 'alpha(opacity=100)';
 
-    } else {
+//     } else {
 
-        myNav.style.opacity = "0";
-        myNav.style.filter  = 'alpha(opacity=0)';
+//         myNav.style.opacity = "0";
+//         myNav.style.filter  = 'alpha(opacity=0)';
 
-    }
-};
+//     }
+// };
 
 

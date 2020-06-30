@@ -8,6 +8,8 @@ export const TechnicalMap = new Mongo.Collection('TechnicalMap');
 
 TechnicalMap.allow({
   insert: function () {
+    console.log('Objeto Inserido');
+    
     return true;
   },
   update: function () {
@@ -18,7 +20,9 @@ TechnicalMap.allow({
   }
 });
 
-const techTypes = { "Multimédia": 'Multimédia', "Software": 'Software', "App": 'App' };
+const techTypes = { "Multimédia": 'Multimédia', "Software": 'Software', 
+"Aplicativo Móvel": 'Aplicativo Móvel', 'Framework':'Framework',
+'Livro Digital':'Livro Digital', 'Modelo': 'Modelo' };
 
 const coordinatesSchema = new SimpleSchema({
   lat: {
@@ -42,11 +46,12 @@ const geometrySchema = new SimpleSchema({
   coordinates: {
     type: Array,
     optional: false,
-    maxCount:1 
+    label: "Coordenadas Lat/Long",
+    maxCount:2,
+    minCount:2 
   },
   "coordinates.$": {
-    type: coordinatesSchema,
-    label: false,
+    type: SimpleSchema.Integer,
   }
 })
 
@@ -81,13 +86,13 @@ const propertiesSchema = new SimpleSchema({
 })
 
 TechnicalMapSchema = new SimpleSchema({
-  properties: { type: propertiesSchema },
-  geometry: { type: geometrySchema, optional:false },
   type: {
     type: String,
     defaultValue: 'Feature',
     autoform: { type: "hidden", label: false }
   },
+  properties: { type: propertiesSchema, label: "Propriedades" },
+  geometry: { type: geometrySchema, optional:false, label: "Geometria" },
   authors: {
     type: Array,
     optional: true,
@@ -110,6 +115,11 @@ TechnicalMapSchema = new SimpleSchema({
     optional: true,
     label: "Prefixo (ie. PhD, Prof)",
     optional: true,
+  },
+  submitedBy: {
+    type: String,
+    autoValue: function(){ return this.userId },
+    autoform: { type: "hidden", label: false }
   },
 }, {tracker: Tracker});
 
