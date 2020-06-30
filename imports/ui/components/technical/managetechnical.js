@@ -23,6 +23,23 @@ Template.managetechnical.events({
     Technical.remove(this._id);
   },
   'click #deleteTechMap'(){
-    TechnicalMap.remove(this._id);
+    let docId = this._id;
+    Meteor.call('removeDocFromCarto', {
+      docId: docId,
+      typeOfCall: 'trabalhos_tecnicos'
+    }, function(error, result) { 
+      if (error) { 
+        // This is a possible error while calling the internal Server. For the Carto API check the exception handling in Methods
+        console.log('error', error); 
+      } 
+      if (result) { 
+        // If result comes as answer from the server, is Because CARTO API found some kind of problem. 
+        console.log(result.error);
+      } else {
+        console.log('Removing the Doc '+docId);
+        TechnicalMap.remove(docId);
+      }
+    });
   }
+  
 });

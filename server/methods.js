@@ -30,5 +30,24 @@ Meteor.methods({
         console.log(error);
         return { error:error, errorMsg: error.response.content};
       }
+  },
+  removeDocFromCarto: function({docId, typeOfCall}) {
+    try {
+      let url = "http://fillipefeitosa.cartodb.com/api/v2/sql";
+      const result = HTTP.call('POST', url, 
+      {
+        params:
+        {
+          q: `DELETE FROM ${typeOfCall} WHERE mongo_idd='${docId}'`,
+          api_key: "3d5e5b8b0063217bfdfdacff263bd4edc24d871f"
+        }
+      }) 
+    } catch (error) {
+      console.log(error)
+      return { error: error, errorMsg: error.response.content };
+    }
+  },
+  updateDocToCarto: function({docId, typeOfCall}) {
+    // Create
   } 
 });
