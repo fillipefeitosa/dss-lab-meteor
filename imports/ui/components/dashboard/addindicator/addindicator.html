@@ -1,0 +1,114 @@
+<template name="addindicator">
+  <div class="col-12">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary">
+        <input
+          type="radio"
+          name="options"
+          id="customMap"
+          autocomplete="off"
+          checked
+        />
+        <i class="fas fa-globe-europe"></i> Novo mapa customizado
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="defaultMap" autocomplete="off" />
+        <i class="fas fa-file-upload"></i> Novo mapa a partir de ficheiro
+      </label>
+    </div>
+  </div>
+
+  <!-- This mess is because of beautify -->
+  <br /><br /><br /><br /><br /><br /><br /><br />
+  {{#if verifyWhatIndicator 'customMap' }} {{> customMap }} {{else if
+  verifyWhatIndicator 'defaultMap' }} {{> defaultMap }} {{else}}
+  <div class="col-12">
+    <h5>Selecione uma das opções</h5>
+  </div>
+  {{/if}}
+</template>
+
+<template name="customMap">
+  <hr />
+  <div class="col-8">
+    <form id="customMapCreate" method="post">
+      <input type="hidden" id="mapType" name="mapType" value="customMap" />
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="inputEmail4">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Nome"
+            minlength="6"
+            required
+          />
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="category">Categoria</label>
+          <select id="category" class="form-control">
+            <option selected value="nuts3">Nuts 3</option>
+            <option value="municipality">Municípios</option>
+            <option value="city">Cidade</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="url">URL em Português</label>
+          <input
+            type="url"
+            class="form-control"
+            id="url"
+            name="url"
+            placeholder="Url PT"
+            required
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="mapService">Serviço</label>
+          <select id="mapService" class="form-control">
+            <option selected value="cartodb">CartoDB</option>
+            <option value="mapbox">Mapbox Studio</option>
+            <option value="qgis">QGIS</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-6">
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Descrição</label>
+            <textarea
+              class="form-control"
+              id="descriptionPt"
+              maxlength="600"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-group col-6">
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea
+              class="form-control"
+              id="descriptionEn"
+              maxlength="600"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submeter</button>
+    </form>
+  </div>
+</template>
+
+<template name="defaultMap">
+  <div class="col-12">
+    <h4>Em construção</h4>
+  </div>
+</template>

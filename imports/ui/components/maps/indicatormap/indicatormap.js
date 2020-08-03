@@ -1,0 +1,1 @@
+import "./indicatormap.html";

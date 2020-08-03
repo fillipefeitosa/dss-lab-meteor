@@ -1,6 +1,6 @@
-import { Meteor } from 'meteor/meteor';
-import { Technical } from '../technical.js';
+import { Meteor } from "meteor/meteor";
+import { Technical } from "../technical.js";
 
-Meteor.publish('Technical.all', function () {
+Meteor.publish("Technical.all", function () {
   return Technical.find({});
 });

@@ -1,0 +1,123 @@
+<template name="indicatornav">
+  <div class="col-sm-6 text-center mt-5 pt-2 nav-pills">
+    <div
+      class="nav flex-column"
+      id="v-pills-tab"
+      role="tablist"
+      aria-orientation="vertical"
+    >
+      <a
+        class="nav-link active"
+        id="v-pills-home-tab"
+        data-toggle="pill"
+        href="#v-pills-home"
+        role="tab"
+        aria-controls="v-pills-home"
+        aria-selected="true"
+        ><h4>NUTS3</h4></a
+      >
+      <a
+        class="nav-link"
+        id="v-pills-profile-tab"
+        data-toggle="pill"
+        href="#v-pills-profile"
+        role="tab"
+        aria-controls="v-pills-profile"
+        aria-selected="false"
+        ><h4>Municípios</h4></a
+      >
+      <a
+        class="nav-link"
+        id="v-pills-messages-tab"
+        data-toggle="pill"
+        href="#v-pills-messages"
+        role="tab"
+        aria-controls="v-pills-messages"
+        aria-selected="false"
+        ><h4>Freguesias</h4></a
+      >
+    </div>
+  </div>
+  <div class="col-sm-6 text-left mt-5 pt-2">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div
+        class="tab-pane fade show active"
+        id="v-pills-home"
+        role="tabpanel"
+        aria-labelledby="v-pills-home-tab"
+      >
+        <!-- NUTS 3 -->
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action"
+            ><b>Demografia:</b> Índice de dependência de jovens</a
+          >
+          <a href="#" class="list-group-item list-group-item-action">
+            <b>Demografia:</b> Índice de dependência total
+          </a>
+          <a href="#" class="list-group-item list-group-item-action"
+            ><b>Geografia da Habitação:</b> Variação da população idosa</a
+          >
+          <a href="#" class="list-group-item list-group-item-action"
+            ><b>Geografia da Habitação:</b> Variação da população jovem</a
+          >
+          <a href="#" class="list-group-item list-group-item-action"
+            ><b>Geografia da Habitação:</b> Variação da população total</a
+          >
+        </div>
+      </div>
+      <div
+        class="tab-pane fade"
+        id="v-pills-profile"
+        role="tabpanel"
+        aria-labelledby="v-pills-profile-tab"
+      >
+        <!-- Municípios -->
+        <div class="list-group">
+          <a
+            href="/indicatormap"
+            class="list-group-item list-group-item-action"
+          >
+            Índice de dependência total
+          </a>
+          <a
+            href="/indicatormap2"
+            class="list-group-item list-group-item-action"
+            >Variação da população total
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="tab-pane fade"
+        id="v-pills-messages"
+        role="tabpanel"
+        aria-labelledby="v-pills-messages-tab"
+      >
+        <div class="list-group">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+          >
+            Aveiro <span class="badge badge-primary badge-pill">4</span></a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+            >Covilhã <span class="badge badge-primary badge-pill">3</span></a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+            >Montalegre <span class="badge badge-primary badge-pill">2</span></a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+            >Setúbal
+            <span class="badge badge-primary badge-pill text-right">5</span></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

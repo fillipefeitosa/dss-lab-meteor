@@ -1,44 +1,9 @@
 <template name="category">
-    <div class="container mt-4 mb-4">
-        <div class="row">
-            <!-- Comentado para aproveitar melhor a página -->
-            <!-- <div class="col-xs-12 col-lg-4 ">
-                <div class="card mb-4">
-    
-    
-                    <div class="container">
-                        <div class="row">
-    
-                            <div class="list-group" id="main-menu">
-                                <span class="list-group-item active background-blue" style="border: none;" href="#sub-menu" data-toggle="collapse" data-parent="#main-menu"><h5 style="margin:0;">Categorias</h5></span>
-
-                            <a name="indicador" class="list-group-item dropup collapsed" aria-expanded="false" href="#sub-menu13" data-toggle="collapse" data-parent="#main-menu"><span class="down-caret"></span>
-                                      Trabalhos Técnicos
-                                        </a><div class="list-group-level2 collapse" id="sub-menu13"><a class="list-group-item" onclick="requestData(148)" href="javascript:" data-parent="#sub-sub-menu">
-                                          Cartas Educativas</a>
-                                          </div>
-                            <a name="indicador" class="list-group-item dropup collapsed" aria-expanded="false" href="#sub-menu7" data-toggle="collapse" data-parent="#main-menu"><span class="down-caret"></span>
-                                      Ferramentas
-                            </a>
-                                <div class="list-group-level2 collapse" id="sub-menu7"><a class="list-group-item" onclick="requestData(127)" href="javascript:" data-parent="#sub-sub-menu">
-                                    Habita</a>
-                                </div>
-                                
-                            <div style="height: 1px"></div>
-
-                            </div>
-    
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            
-            {{> Template.dynamic template=map}}
-            
-    
-        </div>
+  <div class="container mt-4 mb-4">
+    <div class="row h-100">
+      {{> Template.dynamic template=map}}
     </div>
-    
-    
-    {{> Template.dynamic template=bottomContainer}}
+  </div>
+
+  {{> Template.dynamic template=bottomContainer}}
 </template>

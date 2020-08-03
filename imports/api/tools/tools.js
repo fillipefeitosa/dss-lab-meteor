@@ -27,12 +27,12 @@ const techTypes = {
 const coordinatesSchema = new SimpleSchema(
   {
     lat: {
-      type: SimpleSchema.Integer,
+      type: Number,
       min: 32,
       max: 43,
     },
     long: {
-      type: SimpleSchema.Integer,
+      type: Number,
       min: -29,
       max: -6,
     },

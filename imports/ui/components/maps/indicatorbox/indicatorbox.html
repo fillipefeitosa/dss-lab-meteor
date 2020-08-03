@@ -1,0 +1,49 @@
+<template name="indicatorbox">
+  <!-- This entire component was disconsidered in the beta release -->
+  <!-- Kept here for documentation and reference purpuses -->
+  <!-- <div id="instrucoes" class="container pb-4">
+          <div class="card">
+      
+              <span class="list-group-item active background-blue">
+                  <h5 class="m-0">Trabalhos sem localização ou fora do contexto de Portugal</h5>
+              </span>
+  
+              <div class="m-3">
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="list-group list-group-flush" id="list-tab" role="tablist">
+                        {{#each tech in techCollection }}
+                          <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#{{tech._id}}" role="tab" aria-controls="home">{{ tech.name }}</a>
+                        {{/each }}  
+                        </div>
+                      </div>
+                      
+                      <div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                          {{#each tech in techCollection }}
+                          <div class="tab-pane fade" id="{{ tech._id }}" role="tabpanel" aria-labelledby="list-messages-list">
+                              <ul>
+                                  <li><b>Authors</b></li>
+                                  {{#each author in tech.authors }}
+                                    {{ author.prefix }} {{ author.name }} <br>
+                                  {{/each}}
+                                  <li><b>Abstract</b></li>
+                                  {{ tech.abstract }}
+                                  <li><b>Link</b></li>
+                                  {{ tech.link }}
+                                  <li><b>Keywords</b></li>
+                                  {{ tech.keywords }}
+                              </ul>
+                          </div>
+                          {{/each}}
+                          <div class="tab-pane fade" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+                          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+                          <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+                        </div>
+                      </div>
+                    </div>
+      
+              </div>
+          </div>
+      </div> -->
+</template>

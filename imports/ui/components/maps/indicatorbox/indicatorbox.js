@@ -1,0 +1,1 @@
+import "./indicatorbox.html";
