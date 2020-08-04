@@ -1,12 +1,118 @@
 <template name="formupdate">
   <div class="col-md-3">
-    <h2><a href="#" id="clickBack"><i class="fas fa-arrow-circle-left"></i></a>  Editar Registo</h2>
+    <h2>
+      <a href="#" id="clickBack"><i class="fas fa-arrow-circle-left"></i></a>
+      Editar Registo
+    </h2>
   </div>
   <div class="col-md-7">
+    {{#if getCollectionType 'indicatorMapCollection'}}
+    <!--  -->
+    {{> updateIndicator indicatorMap=findIndicatorMap}}
+    <!--  -->
+    {{else}}
+    <!--  -->
     {{#with getDocument}}
-      {{> quickForm collection=formCollection id="quickEditForm" doc=this type="update"}}
+    <!--  -->
+    {{> quickForm collection=formCollection id="quickEditForm" doc=this
+    type="update"}}
+    <!--  -->
     {{/with}}
+    <!--  -->
+    {{/if}}
   </div>
   <div class="col-md-2"></div>
 </template>
 
+<template name="updateIndicator">
+  <form id="customMapCreate" method="post">
+    <input type="hidden" id="mapType" name="mapType" value="customMap" />
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <label for="inputEmail4">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Nome"
+          minlength="6"
+          value="{{indicatorMap.map.name}}"
+          required
+        />
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="category">Categoria</label>
+        <select id="category" class="form-control">
+          {{#each category in typesOfCategories}}
+          {{#if isSelected indicatorMap.map.category category}}
+          <option selected value="{{category}}">{{getCategoryName category}}</option>
+          {{else}}
+          <option value="{{category}}">{{getCategoryName category}}</option>
+          {{/if}}
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <label for="url">URL em Português</label>
+        <input
+          type="url"
+          class="form-control"
+          id="url"
+          name="url"
+          placeholder="Url PT"
+          value="{{indicatorMap.map.url}}"
+          required
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <label for="mapService">Serviço</label>
+        <select id="mapService" class="form-control">
+          {{#each service in typesOfService}}
+          <hr />
+          {{#if isSelected indicatorMap.map.mapService service }}
+          <option selected value="{{service}}"
+            >{{getServiceName service}}</option
+          >
+          {{else}}
+          <option value="{{service}}">{{getServiceName service}}</option>
+          {{/if}}
+          <!-- <option value="cartodb">CartoDB</option>
+          <option value="mapbox">Mapbox Studio</option>
+          <option value="qgis">QGIS</option> -->
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <div class="form-group">
+          <label for="descriptionPt">Descrição</label>
+          <textarea
+            class="form-control"
+            id="descriptionPt"
+            maxlength="600"
+            rows="3"
+            value="{{indicatorMap.map.descriptionPt}}"
+            required
+          ></textarea>
+        </div>
+      </div>
+      <div class="form-group col-6">
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Description</label>
+          <textarea
+            class="form-control"
+            id="descriptionEn"
+            maxlength="600"
+            rows="3"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submeter</button>
+  </form>
+</template>

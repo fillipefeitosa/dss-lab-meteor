@@ -12,10 +12,6 @@ Template.addindicator.events({
   },
 });
 
-Template.addindicator.onCreated(function () {
-  Meteor.subscribe("indicators.all");
-});
-
 Template.addindicator.helpers({
   verifyWhatIndicator(typeOfIndicator) {
     sessionMap = Session.get("indicatorMap");

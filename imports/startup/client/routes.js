@@ -181,6 +181,14 @@ loggedIn.route("/formupdate/:docId", {
   },
 });
 
+loggedIn.route("/manageindicator", {
+  name: "manageindicator",
+  breadcrumb: "Gerir Retratos Territoriais",
+  action: function () {
+    BlazeLayout.render("admin", { dashboard: "manageindicators" });
+  },
+});
+
 // Last route Path routine
 var lastRoutePath;
 FlowRouter.triggers.enter([

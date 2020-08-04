@@ -3,14 +3,14 @@ import { check } from "meteor/check";
 import { Indicators } from "./indicators";
 
 Meteor.methods({
-  "indicators.insertCustomMap": function (indicatorObj) {
-    check(indicatorObj["name"], String);
-    check(indicatorObj["url"], String);
-    check(indicatorObj["mapType"], String);
-    check(indicatorObj["mapService"], String);
+  "indicators.insertCustomMap": function (map) {
+    check(map["name"], String);
+    check(map["url"], String);
+    check(map["mapType"], String);
+    check(map["mapService"], String);
 
     return Indicators.insert({
-      indicatorObj,
+      map,
       createdAt: new Date(),
       submitedBy: Meteor.userId(),
     });
