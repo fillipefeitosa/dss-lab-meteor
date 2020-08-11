@@ -54,7 +54,9 @@ Template.customMap.events({
       }
       if (success) {
         // Default Behavior
-        console.log("Indicator Map was successfully inserted");
+        swal("Sucesso", "Mapa customizado inserido com sucesso", "success");
+        // reset the form fields
+        $("#customMapCreate").trigger("reset");
       }
     });
   },

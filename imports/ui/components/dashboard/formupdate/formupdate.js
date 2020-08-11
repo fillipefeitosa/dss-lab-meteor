@@ -54,6 +54,36 @@ Template.formupdate.helpers({
 });
 
 // Update Indicator
+Template.updateIndicator.events({
+  "submit #customMapCreate": function (event, template) {
+    event.preventDefault();
+    let docId = this.indicatorMap._id;
+    let target = event.target;
+    console.log(docId);
+    let map = {
+      name: target.name.value,
+      mapType: target.mapType.value,
+      category: target.category.value,
+      url: target.url.value,
+      mapService: target.mapService.value,
+      descriptionPt: target.descriptionPt.value,
+    };
+    Meteor.call(
+      "indicators.updateCustomMap",
+      { docId: docId, map: map },
+      function (error, success) {
+        if (error) {
+          console.log("error", error);
+        }
+        if (success) {
+          //default behavior
+          swal("Sucesso", "Registo atualizado", "success");
+        }
+      }
+    );
+  },
+});
+
 Template.updateIndicator.helpers({
   typesOfService() {
     return ["cartoDB", "mapbox", "qgis"];

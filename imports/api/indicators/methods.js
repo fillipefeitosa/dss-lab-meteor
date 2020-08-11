@@ -15,4 +15,19 @@ Meteor.methods({
       submitedBy: Meteor.userId(),
     });
   },
+  "indicators.updateCustomMap": function (data) {
+    let map = data.map;
+    check(map["name"], String);
+    check(map["url"], String);
+    check(map["mapType"], String);
+    check(map["mapService"], String);
+
+    let docId = data.docId;
+    return Indicators.update(
+      { _id: docId },
+      {
+        map: map,
+      }
+    );
+  },
 });

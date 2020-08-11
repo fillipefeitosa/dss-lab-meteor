@@ -11,26 +11,29 @@
         </tr>
       </thead>
       <tbody class="text-center">
-        {{# each indicator in indicatorMapCollection }}
-        <tr>
-          <td>{{indicator.map.name}}</td>
-          <td>{{verifyMapType indicator.map.mapType}}</td>
-          <td>{{indicator.map.category}}</td>
-          <td class="text-center">
-            <a
-              href="/admin/formupdate/{{indicator._id}}?collection=indicatorMapCollection"
-            >
-              <i class="fa fa-edit"></i> Editar
-            </a>
-            <br />
-            <a href="#" id="deleteIndicatorMap"
-              ><i class="fa fa-times" style="color: red;"></i> Remover</a
-            >
-          </td>
-        </tr>
-        {{/each}}
+        {{# each indicator in indicatorMapCollection }} {{> indicator_item
+        indicator=indicator}} {{/each}}
       </tbody>
     </table>
   </div>
   {{/if}}
+</template>
+
+<template name="indicator_item">
+  <tr>
+    <td>{{indicator.map.name}}</td>
+    <td>{{verifyMapType indicator.map.mapType}}</td>
+    <td>{{indicator.map.category}}</td>
+    <td class="text-center">
+      <a
+        href="/admin/formupdate/{{indicator._id}}?collection=indicatorMapCollection"
+      >
+        <i class="fa fa-edit"></i> Editar
+      </a>
+      <br />
+      <a href="#" id="deleteIndicatorMap"
+        ><i class="fa fa-times" style="color: red;"></i> Remover</a
+      >
+    </td>
+  </tr>
 </template>
