@@ -9,12 +9,13 @@ import "../../ui/pages/login/login.js";
 import "../../ui/pages/admin/admin.js";
 import "../../ui/pages/not-found/not-found.js";
 import "../../ui/pages/category/category.js";
+import "../../ui/pages/landing/landing.js";
 
 // Set up all routes in the app
 FlowRouter.route("/", {
-  name: "App.redirect",
+  name: "App.landing",
   action() {
-    window.location = "http://localhost:8000/";
+    BlazeLayout.render("App_body", { top: "header", main: "landing" });
   },
 });
 
